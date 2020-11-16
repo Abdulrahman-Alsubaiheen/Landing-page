@@ -75,7 +75,6 @@ section {
 }
 
 .navbar__menu .menu__link {
-    display: block;
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
@@ -112,6 +111,7 @@ section {
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .landing__container {
+    height: 100vh;
     padding: 1em;
     text-align: left;
 }

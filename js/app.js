@@ -18,6 +18,9 @@
  * 
 */
 
+const sections = document.querySelectorAll('section');
+const navbar_list = document.querySelector('#navbar__list');
+
 
 /**
  * End Global Variables
@@ -25,7 +28,23 @@
  * 
 */
 
+for (let i = 0; i < sections.length; i++) {
+    let item = sections[i];
 
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+
+    a.textContent = item.dataset.nav;   // HTML data-* Attribute
+
+    a.setAttribute("href", '#' + item.getAttribute('id'));
+
+    li.classList.add("menu__link");
+
+    li.appendChild(a);
+    navbar_list.appendChild(li);
+
+    console.log(item);
+  }
 
 /**
  * End Helper Functions
