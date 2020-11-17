@@ -30,6 +30,7 @@ function rect_class() {
   }
 }
 
+
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -40,12 +41,13 @@ function rect_class() {
 function build_nav_bar() {
   for (let i = 0; i < sections.length; i++) {
     let item = sections[i];
+    let item_id = item.getAttribute("id")
 
     const li = document.createElement("li");
     const a = document.createElement("a");
 
     a.textContent = item.dataset.nav; // HTML data-* Attribute
-    a.setAttribute("href", "#" + item.getAttribute("id"));
+    a.setAttribute("href", `#${item_id}`);
 
     li.classList.add("menu__link");
     li.appendChild(a);
@@ -54,6 +56,20 @@ function build_nav_bar() {
 
     // console.log(item);
   }
+}
+
+function add_active_menu_link(id){
+  const menu_links = document.querySelectorAll(".menu__link");
+
+  for (let i = 0; i < menu_links.length; i++){
+    let item = menu_links[i];
+    item.classList.remove("active__menu__link");
+  }
+
+  var selector = `a[href="#${id}"]` ;
+  const active_menu_link = document.querySelector(selector).parentElement;
+  active_menu_link.classList.add("active__menu__link");
+
 }
 
 // Add class 'active' to section when near top of viewport
@@ -66,6 +82,7 @@ function active_class() {
       if (!item.classList.contains("your-active-class")) {
         remove_active_class();
         item.classList.add("your-active-class");
+        add_active_menu_link(item.getAttribute("id"));
         // console.log(item);
       }
     }
@@ -84,3 +101,4 @@ build_nav_bar();
 
 // Set sections as active
 window.addEventListener("scroll", active_class);
+

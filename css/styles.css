@@ -52,7 +52,7 @@ p {
 }
 
 a {
-  color: #213e3b;
+  color: #000000;
   text-decoration: none;
   font-size: 17px;
 }
@@ -100,6 +100,16 @@ section {
   background: rgb(151, 150, 150);
   color: #fff;
   transition: ease 0.3s all;
+}
+
+
+.active__menu__link{
+  background: rgb(0, 0, 0);
+}
+
+
+.active__menu__link a{
+  color: rgb(255, 255, 255);
 }
 
 /* Header Styles */
