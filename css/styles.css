@@ -18,6 +18,10 @@ body {
     color: #fff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* Typeography General*/
 h1 {
@@ -45,6 +49,12 @@ p {
     color: #eee;
 }
 
+a {
+    color: #213e3b;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
 /* ---- Layout Rules ---- */
 main {
     margin: 10vh 1em 10vh;
@@ -58,6 +68,7 @@ main {
 section {
     position: relative;
     min-height: 80vh;
+    padding-top: 50px;
 }
 
 
@@ -65,13 +76,16 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 7%;  
     margin: 0;
-    text-align: right;
 }
 
 .navbar__menu li {
     display: inline-block;
+    padding: 0px 25px;
 }
 
 .navbar__menu .menu__link {
@@ -82,7 +96,7 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
+    background: rgb(151, 150, 150);
     color: #fff;
     transition: ease 0.3s all;
 }
@@ -111,7 +125,7 @@ section {
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .landing__container {
-    height: 100vh;
+    /* height: 100vh; */
     padding: 1em;
     text-align: left;
 }
@@ -221,3 +235,5 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+
